@@ -2,11 +2,11 @@
   <div class="issue-card__header d-flex">
     <div>
       <div class="issue-card__header issue-card__header__document-type d-flex">
-        <div>Foto de Célula Frente</div>
+        <div class="text--lg">Foto de Célula Frente</div>
         <span class="badge">Incidencia</span>
       </div>
       <div
-        class="issue-card__header issue-card__header__document-name text-secondary"
+        class="issue-card__header issue-card__header__document-name text-secondary text--sm"
       >
         nombre_del_documento.pdf
       </div>
@@ -49,16 +49,13 @@
   </div>
 
   @if (showIssueList) {
-
   <div @listAnimation>
     <hr class="issue-item" />
-    <app-issue-item class="issue-item"></app-issue-item>
-    <app-issue-item class="issue-item"></app-issue-item>
-    <app-issue-item class="issue-item"></app-issue-item>
-    <app-issue-item class="issue-item"></app-issue-item>
-    <app-issue-item class="issue-item"></app-issue-item>
-    <app-issue-item class="issue-item"></app-issue-item>
-    <app-issue-item class="issue-item"></app-issue-item>
+    <div class="issue-card__issue-list d-flex">
+      @for (issue of issues; track $index) {
+      <app-issue-item class="issue-item" [issue]="issue"></app-issue-item>
+      }
+    </div>
   </div>
   }
 </div>

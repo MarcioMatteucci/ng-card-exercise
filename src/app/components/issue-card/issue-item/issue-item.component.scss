@@ -1,0 +1,26 @@
+.issue {
+  box-shadow: unset;
+
+  &.valid {
+    border: 2px solid green;
+  }
+
+  &.invalid {
+    border: 2px solid red;
+  }
+
+  &__user {
+    text-transform: uppercase;
+  }
+
+  &__description {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+
+  &__action {
+    cursor: pointer;
+    gap: 7px;
+    margin-top: 20px;
+  }
+}

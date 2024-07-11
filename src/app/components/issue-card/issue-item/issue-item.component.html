@@ -1,1 +1,9 @@
-<div class="card">issue-item works!</div>
+<div class="card issue" [ngClass]="issue?.state === issueState.valid ? 'valid' : 'invalid'">
+  <div class="issue issue__user">{{ issue?.user }}</div>
+  <div class="issue issue__date text-secondary text--sm">{{ issue?.date | date: 'dd/MM/yyyy HH:mm' }}</div>
+  <div class="issue issue__description">{{ issue?.description }}</div>
+  <div class="issue issue__action d-flex">
+    <fa-icon *ngIf="actionIcon" class="issue issue__action__icon text-secondary" [icon]="actionIcon"></fa-icon>
+    <div class="issue issue__action__label text-secondary">{{ issue?.state === issueState.valid ? 'Deshacer Validación' : 'Validar Incidencia' }}</div>
+  </div>
+</div>

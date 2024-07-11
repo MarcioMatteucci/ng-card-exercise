@@ -1,5 +1,5 @@
 .issue-card {
-  width: 400px;
+  width: 450px;
 
   &__header {
     justify-content: space-between;
@@ -7,12 +7,10 @@
     &__document-type {
       align-items: center;
       gap: 15px;
-      font-size: 20px;
       font-weight: bold;
     }
 
     &__document-name {
-      font-size: 12px;
       color: grey;
     }
 
@@ -34,5 +32,10 @@
         font-size: 14px;
       }
     }
+  }
+
+  &__issue-list {
+    flex-direction: column;
+    gap: 15px;
   }
 }

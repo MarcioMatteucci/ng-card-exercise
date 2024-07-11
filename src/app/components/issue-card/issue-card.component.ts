@@ -8,6 +8,7 @@ import {
   query,
   state,
 } from '@angular/animations';
+import { Issue, ISSUE_STATE } from './models/issue.type';
 
 @Component({
   selector: 'app-issue-card',
@@ -18,9 +19,9 @@ import {
       transition(':enter', [
         query('.issue-item', [
           style({ opacity: 0, transform: 'translateY(-20px)' }),
-          stagger(75, [
+          stagger(125, [
             animate(
-              '75ms ease-out',
+              '125ms ease-out',
               style({ opacity: 1, transform: 'translateY(0)' })
             ),
           ]),
@@ -28,9 +29,9 @@ import {
       ]),
       transition(':leave', [
         query('.issue-item', [
-          stagger(-75, [
+          stagger(-125, [
             animate(
-              '75ms ease-in',
+              '125ms ease-in',
               style({ opacity: 0, transform: 'translateY(20px)' })
             ),
           ]),
@@ -47,6 +48,27 @@ import {
 })
 export class IssueCardComponent {
   showIssueList = false;
+
+  issues: Issue[] = [
+    {
+      user: 'Ricardo Carusso Lombardi',
+      date: new Date('2024-07-11T10:30:00'),
+      description: 'Documento no legible, por favor cargar uno nuevo',
+      state: ISSUE_STATE.valid,
+    },
+    {
+      user: 'Donald Arthur Normal',
+      date: new Date('2024-07-10T15:45:00'),
+      description: 'Descripción del segundo issue',
+      state: ISSUE_STATE.invalid,
+    },
+    {
+      user: 'Peter Parker',
+      date: new Date('2024-07-09T08:00:00'),
+      description: 'Descripción del tercer issue',
+      state: ISSUE_STATE.valid,
+    },
+  ];
 
   toogleIssueList() {
     this.showIssueList = !this.showIssueList;
