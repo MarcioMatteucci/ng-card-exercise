@@ -1,13 +1,13 @@
 <div class="card issue-card">
-
-
   <div class="issue-card__header d-flex">
     <div>
       <div class="issue-card__header issue-card__header__document-type d-flex">
         <div>Foto de Célula Frente</div>
         <span class="badge">Incidencia</span>
       </div>
-      <div class="issue-card__header issue-card__header__document-name text-secondary">
+      <div
+        class="issue-card__header issue-card__header__document-name text-secondary"
+      >
         nombre_del_documento.pdf
       </div>
     </div>
@@ -18,9 +18,47 @@
     </div>
   </div>
 
-<div class="issue-card__actions d-flex">
-<div class="issue-card__actions"></div>
-</div>
+  <div class="issue-card__actions d-flex">
+    <div
+      class="issue-card__actions__button d-flex text-primary"
+      (click)="addIssue()"
+    >
+      <img class="icon icon--md" src="plus.svg" alt="add-issue" />
+      <div
+        class="issue-card__actions__button issue-card__actions__button--label"
+      >
+        Agregar Incidencia
+      </div>
+    </div>
+    <div
+      class="issue-card__actions__button d-flex text-primary"
+      (click)="toogleIssueList()"
+    >
+      <img
+        class="icon icon--md"
+        [@showIssuesIconRotate]="showIssueList ? 'pointUp' : 'pointDown'"
+        src="point-down-arrow.svg"
+        alt="upload-icon"
+      />
+      <div
+        class="issue-card__actions__button issue-card__actions__button--label"
+      >
+        Ver Incidencias
+      </div>
+    </div>
+  </div>
 
+  @if (showIssueList) {
 
+  <div @listAnimation>
+    <hr class="issue-item" />
+    <app-issue-item class="issue-item"></app-issue-item>
+    <app-issue-item class="issue-item"></app-issue-item>
+    <app-issue-item class="issue-item"></app-issue-item>
+    <app-issue-item class="issue-item"></app-issue-item>
+    <app-issue-item class="issue-item"></app-issue-item>
+    <app-issue-item class="issue-item"></app-issue-item>
+    <app-issue-item class="issue-item"></app-issue-item>
+  </div>
+  }
 </div>

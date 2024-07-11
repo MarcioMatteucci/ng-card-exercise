@@ -20,4 +20,19 @@
       gap: 15px;
     }
   }
+
+  &__actions {
+    margin-top: 15px;
+    gap: 25px;
+
+    &__button {
+      cursor: pointer;
+      align-items: center;
+      gap: 7px;
+
+      &--label {
+        font-size: 14px;
+      }
+    }
+  }
 }
