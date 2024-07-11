@@ -4,6 +4,8 @@
   <div class="issue issue__description">{{ issue?.description }}</div>
   <div class="issue issue__action d-flex">
     <fa-icon *ngIf="actionIcon" class="issue issue__action__icon text-secondary" [icon]="actionIcon"></fa-icon>
-    <div class="issue issue__action__label text-secondary">{{ issue?.state === issueState.valid ? 'Deshacer Validación' : 'Validar Incidencia' }}</div>
+    <div class="issue issue__action__label text-secondary">
+      {{ issue?.state === issueState.valid ? 'Deshacer Validación' : 'Validar Incidencia' }}
+    </div>
   </div>
 </div>

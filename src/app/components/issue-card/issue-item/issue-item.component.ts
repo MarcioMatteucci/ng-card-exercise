@@ -1,10 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Issue, ISSUE_STATE } from '../models/issue.type';
-import {
-  faCheck,
-  faRotateLeft,
-  IconDefinition,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faRotateLeft, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-issue-item',
@@ -17,7 +13,6 @@ export class IssueItemComponent implements OnInit {
 
   issueState = ISSUE_STATE;
   ngOnInit(): void {
-    this.actionIcon =
-      this.issue?.state === ISSUE_STATE.valid ? faRotateLeft : faCheck;
+    this.actionIcon = this.issue?.state === ISSUE_STATE.valid ? faRotateLeft : faCheck;
   }
 }

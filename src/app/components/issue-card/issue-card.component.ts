@@ -1,13 +1,5 @@
 import { Component } from '@angular/core';
-import {
-  trigger,
-  style,
-  transition,
-  animate,
-  stagger,
-  query,
-  state,
-} from '@angular/animations';
+import { trigger, style, transition, animate, stagger, query, state } from '@angular/animations';
 import { Issue, ISSUE_STATE } from './models/issue.type';
 
 @Component({
@@ -19,24 +11,10 @@ import { Issue, ISSUE_STATE } from './models/issue.type';
       transition(':enter', [
         query('.issue-item', [
           style({ opacity: 0, transform: 'translateY(-20px)' }),
-          stagger(125, [
-            animate(
-              '125ms ease-out',
-              style({ opacity: 1, transform: 'translateY(0)' })
-            ),
-          ]),
+          stagger(125, [animate('125ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))]),
         ]),
       ]),
-      transition(':leave', [
-        query('.issue-item', [
-          stagger(-125, [
-            animate(
-              '125ms ease-in',
-              style({ opacity: 0, transform: 'translateY(20px)' })
-            ),
-          ]),
-        ]),
-      ]),
+      transition(':leave', [query('.issue-item', [stagger(-125, [animate('125ms ease-in', style({ opacity: 0, transform: 'translateY(20px)' }))])])]),
     ]),
     trigger('showIssuesIconRotate', [
       state('pointDown', style({ transform: 'rotate(0deg)' })),
